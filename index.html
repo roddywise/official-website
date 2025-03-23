@@ -2,10 +2,11 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
+  <!-- 响应式meta标签 -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Roddy Wise</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- 可引入字体和图标库 -->
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- 引入Google字体与图标库 -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -19,7 +20,6 @@
         <li><a href="#news">新闻</a></li>
         <li><a href="#tour">巡演</a></li>
         <li><a href="#music">音乐</a></li>
-        <li><a href="#video">视频</a></li>
         <li><a href="#contact">关于</a></li>
       </ul>
     </nav>
@@ -27,37 +27,42 @@
 
   <!-- 英雄区 -->
   <section id="hero" class="hero">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>欢迎来到 Roddy Wise 的世界</h1>
-      <p>探索最新音乐、巡演资讯和独家内容</p>
+      <p>探索最新音乐、巡演资讯及更多独家内容</p>
       <button onclick="scrollToSection('news')">立即探索</button>
     </div>
   </section>
 
   <!-- 新闻动态区 -->
-  <section id="news" class="content news-section">
+  <section id="news" class="section news">
     <h2>最新动态</h2>
-    <div class="news-items">
-      <article>
+    <div class="card-container">
+      <article class="card">
         <img src="images/news1.jpg" alt="新单曲发布">
-        <h3>新单曲发布</h3>
-        <p>探索 Roddy 最新单曲及幕后花絮。</p>
-        <a href="#">阅读全文</a>
+        <div class="card-content">
+          <h3>新单曲发布</h3>
+          <p>了解 Roddy 最新单曲幕后故事。</p>
+          <a href="#">阅读全文</a>
+        </div>
       </article>
-      <article>
+      <article class="card">
         <img src="images/news2.jpg" alt="巡演公告">
-        <h3>巡演公告</h3>
-        <p>了解 Roddy 的最新巡演安排和票务信息。</p>
-        <a href="#">查看更多</a>
+        <div class="card-content">
+          <h3>巡演公告</h3>
+          <p>查看 Roddy 巡演最新安排和票务信息。</p>
+          <a href="#">查看更多</a>
+        </div>
       </article>
     </div>
   </section>
 
   <!-- 巡演信息区 -->
-  <section id="tour" class="content tour-section">
+  <section id="tour" class="section tour">
     <h2>巡演信息</h2>
-    <div class="tour-items">
-      <div class="tour-item">
+    <div class="tour-container">
+      <div class="tour-card">
         <img src="images/tour1.jpg" alt="纽约站">
         <div class="tour-details">
           <h3>纽约站</h3>
@@ -65,7 +70,7 @@
           <a href="#">购票</a>
         </div>
       </div>
-      <div class="tour-item">
+      <div class="tour-card">
         <img src="images/tour2.jpg" alt="洛杉矶站">
         <div class="tour-details">
           <h3>洛杉矶站</h3>
@@ -77,48 +82,36 @@
   </section>
 
   <!-- 最新音乐区 -->
-  <section id="music" class="content music-section">
+  <section id="music" class="section music">
     <h2>最新音乐</h2>
-    <div class="music-items">
-      <div class="music-item">
+    <div class="music-container">
+      <div class="music-card">
         <img src="images/album1.jpg" alt="Whys">
         <h3>Whys</h3>
       </div>
-      <div class="music-item">
-        <img src="images/album2.jpg" alt="Heals">
-        <h3>Heals</h3>
+      <div class="music-card">
+        <img src="images/album2.jpg" alt="Album 2">
+        <h3>Alubum 2</h3>
       </div>
-      <div class="music-item">
-        <img src="images/album3.jpg" alt="Yet To Come">
-        <h3>Yet To Come</h3>
+      <div class="music-card">
+        <img src="images/album3.jpg" alt="Album 3">
+        <h3>Album 3</h3>
       </div>
-    </div>
-  </section>
-
-  <!-- 视频区 -->
-  <section id="video" class="content video-section">
-    <h2>精彩视频</h2>
-    <div class="video-items">
-      <article class="video-item">
-        <img src="images/video-thumbnail.jpg" alt="音乐视频">
-        <div class="play-overlay"><i class="fa fa-play"></i></div>
-        <h3>官方音乐视频</h3>
-      </article>
     </div>
   </section>
 
   <!-- 订阅/社交媒体区 -->
-  <section id="contact" class="content contact-section">
+  <section id="contact" class="section contact">
     <h2>保持联系</h2>
-    <p>关注 Roddy Wise 的最新消息</p>
-    <div class="social-icons">
+    <p>关注 Roddy Wise 的最新资讯</p>
+    <div class="social">
       <a href="#"><i class="fab fa-instagram"></i></a>
       <a href="#"><i class="fab fa-twitter"></i></a>
       <a href="#"><i class="fab fa-facebook"></i></a>
       <a href="#"><i class="fab fa-youtube"></i></a>
     </div>
     <form id="subscribe-form">
-      <input type="email" placeholder="输入你的邮箱订阅" required>
+      <input type="email" placeholder="输入邮箱订阅" required>
       <button type="submit">订阅</button>
     </form>
   </section>

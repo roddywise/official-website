@@ -1,21 +1,18 @@
-// 页面加载后运行
 document.addEventListener('DOMContentLoaded', () => {
-  console.log("页面已加载");
+  // 定义平滑滚动函数
+  window.scrollToSection = function(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
-  // 订阅表单提交示例
-  const form = document.getElementById('subscribe-form');
-  form.addEventListener('submit', (e) => {
+  // 订阅表单事件
+  const subscribeForm = document.getElementById('subscribe-form');
+  subscribeForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const email = form.querySelector('input[type="email"]').value;
-    alert(`感谢订阅，${email}！`);
-    form.reset();
+    const email = subscribeForm.querySelector('input[type="email"]').value;
+    alert(`感谢订阅：${email}`);
+    subscribeForm.reset();
   });
 });
-
-// 平滑滚动到指定区块
-function scrollToSection(sectionId) {
-  const el = document.getElementById(sectionId);
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth' });
-  }
-}

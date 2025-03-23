@@ -1,4 +1,4 @@
-/* 基础重置与全局样式 */
+/* 全局重置 */
 * {
   margin: 0;
   padding: 0;
@@ -6,9 +6,9 @@
 }
 body {
   font-family: 'Montserrat', sans-serif;
-  line-height: 1.6;
+  background: #fff;
   color: #333;
-  background-color: #fff;
+  line-height: 1.6;
 }
 
 /* 顶部导航 */
@@ -21,7 +21,7 @@ header {
   border-bottom: 1px solid #eee;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
 }
 header .logo {
   font-size: 1.8em;
@@ -38,7 +38,6 @@ nav ul li {
 nav ul li a {
   text-decoration: none;
   color: #333;
-  font-weight: 500;
   transition: color 0.3s;
 }
 nav ul li a:hover {
@@ -47,20 +46,20 @@ nav ul li a:hover {
 
 /* 英雄区 */
 .hero {
+  position: relative;
   height: 80vh;
-  background: url('images/hero.jpg') no-repeat center center/cover;
+  background: url('images/hero.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  position: relative;
   color: #fff;
 }
-.hero::after {
-  content: "";
+.hero-overlay {
   position: absolute;
   top: 0; left: 0;
-  width: 100%; height: 100%;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.4);
 }
 .hero-content {
@@ -89,25 +88,25 @@ nav ul li a:hover {
   background: #e60063;
 }
 
-/* 内容区通用样式 */
-.content {
+/* 通用 section 样式 */
+.section {
   padding: 60px 20px;
   text-align: center;
 }
-.content h2 {
+.section h2 {
   font-size: 2.2em;
   margin-bottom: 40px;
   color: #ff006e;
 }
 
 /* 新闻动态 */
-.news-items {
+.card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
 }
-.news-items article {
+.card {
   width: 300px;
   background: #f9f9f9;
   border: 1px solid #eee;
@@ -115,58 +114,62 @@ nav ul li a:hover {
   overflow: hidden;
   transition: transform 0.3s;
 }
-.news-items article:hover {
+.card:hover {
   transform: translateY(-5px);
 }
-.news-items article img {
+.card img {
   width: 100%;
   display: block;
 }
-.news-items article h3 {
+.card-content {
+  padding: 15px;
+}
+.card-content h3 {
   font-size: 1.4em;
   margin: 15px 0 10px;
 }
-.news-items article p {
-  padding: 0 15px 15px;
+.card-content p {
   font-size: 0.95em;
   color: #666;
+  margin-bottom: 15px;
 }
-.news-items article a {
-  display: block;
-  padding: 10px 0;
+.card-content a {
+  display: inline-block;
+  padding: 8px 20px;
   background: #ff006e;
   color: #fff;
   text-decoration: none;
-  font-weight: 600;
+  border-radius: 5px;
   transition: background 0.3s;
 }
-.news-items article a:hover {
+.card-content a:hover {
   background: #e60063;
 }
 
 /* 巡演信息 */
-.tour-items {
+.tour-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
 }
-.tour-item {
+.tour-card {
   width: 320px;
+  background: #fafafa;
   border: 1px solid #eee;
   border-radius: 5px;
   overflow: hidden;
-  background: #fafafa;
   transition: transform 0.3s;
 }
-.tour-item:hover {
+.tour-card:hover {
   transform: translateY(-5px);
 }
-.tour-item img {
+.tour-card img {
   width: 100%;
 }
 .tour-details {
   padding: 15px;
+  text-align: left;
 }
 .tour-details h3 {
   font-size: 1.5em;
@@ -189,73 +192,45 @@ nav ul li a:hover {
 }
 
 /* 最新音乐 */
-.music-items {
+.music-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
 }
-.music-item {
+.music-card {
   width: 220px;
   transition: transform 0.3s;
 }
-.music-item:hover {
+.music-card:hover {
   transform: scale(1.05);
 }
-.music-item img {
+.music-card img {
   width: 100%;
   border-radius: 5px;
 }
-.music-item h3 {
+.music-card h3 {
   margin-top: 10px;
   font-size: 1.1em;
 }
 
-/* 视频区 */
-.video-items {
-  display: flex;
-  justify-content: center;
-}
-.video-item {
-  position: relative;
-  width: 560px;
-  max-width: 90%;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-.video-item:hover {
-  transform: scale(1.03);
-}
-.video-item img {
-  width: 100%;
-  border-radius: 5px;
-}
-.play-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 3em;
-  color: rgba(255,255,255,0.8);
-}
-
-/* 订阅及社交媒体 */
-.contact-section .social-icons {
+/* 订阅与社交 */
+.social {
   margin: 20px 0;
 }
-.contact-section .social-icons a {
+.social a {
   margin: 0 10px;
   font-size: 1.8em;
   color: #ff006e;
   transition: color 0.3s;
 }
-.contact-section .social-icons a:hover {
+.social a:hover {
   color: #e60063;
 }
 #subscribe-form {
-  margin-top: 20px;
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 }
 #subscribe-form input[type="email"] {
   padding: 10px;
@@ -285,7 +260,7 @@ footer {
   font-size: 0.9em;
 }
 
-/* 响应式设计 */
+/* 响应式 */
 @media (max-width: 768px) {
   nav ul {
     flex-direction: column;
@@ -295,7 +270,7 @@ footer {
     flex-direction: column;
     text-align: center;
   }
-  .news-items, .tour-items, .music-items {
+  .card-container, .tour-container, .music-container {
     flex-direction: column;
     align-items: center;
   }
