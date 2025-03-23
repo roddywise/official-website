@@ -5,19 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artist Official Site</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="logo">Artist</div>
         <nav>
             <ul id="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#music">Music</a></li>
-                <li><a href="#tour">Tour</a></li>
-                <li><a href="#news">News</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#music"><i class="fas fa-music"></i> Music</a></li>
+                <li><a href="#tour"><i class="fas fa-plane"></i> Tour</a></li>
+                <li><a href="#news"><i class="fas fa-newspaper"></i> News</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="#gallery"><i class="fas fa-images"></i> Gallery</a></li>
             </ul>
         </nav>
         <div class="burger" id="burger">
@@ -28,27 +29,29 @@
     </header>
     <main>
         <section id="home" class="hero">
-            <h1>Welcome to the Official Site</h1>
-            <p>Get the latest news, music, and tour dates.</p>
+            <div class="hero-content">
+                <h1>Welcome to the Official Site</h1>
+                <p>Get the latest news, music, and tour dates.</p>
+            </div>
         </section>
-        <section id="about" class="content">
-            <h2>About the Artist</h2>
+        <section id="about" class="content card">
+            <h2><i class="fas fa-user"></i> About the Artist</h2>
             <p>Learn more about the artist's journey and achievements.</p>
         </section>
-        <section id="music" class="content">
-            <h2>Music</h2>
+        <section id="music" class="content card">
+            <h2><i class="fas fa-music"></i> Music</h2>
             <p>Listen to the latest tracks and albums.</p>
         </section>
-        <section id="tour" class="content">
-            <h2>Tour Dates</h2>
+        <section id="tour" class="content card">
+            <h2><i class="fas fa-plane"></i> Tour Dates</h2>
             <p>Find out where the artist is performing next.</p>
         </section>
-        <section id="news" class="content">
-            <h2>Latest News</h2>
+        <section id="news" class="content card">
+            <h2><i class="fas fa-newspaper"></i> Latest News</h2>
             <p>Stay updated with the latest announcements.</p>
         </section>
-        <section id="contact" class="content">
-            <h2>Contact</h2>
+        <section id="contact" class="content card">
+            <h2><i class="fas fa-envelope"></i> Contact</h2>
             <form id="contact-form">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
@@ -60,7 +63,7 @@
             </form>
         </section>
         <section id="gallery" class="content">
-            <h2>Gallery</h2>
+            <h2><i class="fas fa-images"></i> Gallery</h2>
             <div class="slider">
                 <div class="slide"><img src="image1.jpg" alt="Image 1"></div>
                 <div class="slide"><img src="image2.jpg" alt="Image 2"></div>
